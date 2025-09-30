@@ -81,11 +81,12 @@ public class MainActivity extends AppCompatActivity {
     void setSecretValue() {
         Random random = new Random();
         secretValue = random.nextInt(range)+1;//0-9 1-10
+        tTask.setText("Отгадайте число от 1 до "+range);
         Log.i("key",secretValue+"");
     }
 
     void showAlert(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setMessage("Вы выиграли! Хотите сыграть еще раз?")
                 .setTitle("Win!")
                 .setPositiveButton("Да", new DialogInterface.OnClickListener() {
